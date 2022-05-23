@@ -1,0 +1,36 @@
+@charset "UTF-8";
+@import './_variables.scss';
+
+// * RWD Max Breakpoints
+@mixin max-width($breakpoints) {
+  @media screen and (max-width: $breakpoints) {
+    @content;
+  }
+}
+
+// * RWD Min Breakpoints
+@mixin min-width($breakpoints) {
+  @media screen and (min-width: $breakpoints) {
+    @content;
+  }
+}
+
+// * RWD Max Height Breakpoints
+@mixin max-height($breakpoints) {
+  @media screen and (max-height: $breakpoints) {
+    @content;
+  }
+}
+
+// * RWD Min Height Breakpoints
+@mixin min-height($breakpoints) {
+  @media screen and (min-height: $breakpoints) {
+    @content;
+  }
+}
+
+// * Title Format
+@mixin title-format {
+  font-size: 36px;
+  line-height: 1.16em;
+}
