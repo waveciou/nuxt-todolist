@@ -1,9 +1,9 @@
 <template>
   <div class="input-area">
     <div class="input-area__control">
-      <input v-model="inputValue" type="text" class="input-area__input" placeholder="請輸入要做的事情">
+      <input v-model.trim="inputValue" type="text" class="input-area__input" placeholder="請輸入要做的事情">
     </div>
-    <button class="input-area__button">
+    <button class="input-area__button" @click.stop="handleAddTodo">
       <img class="icon-img" src="~assets/img/plus.svg">
     </button>
   </div>
@@ -16,7 +16,22 @@
         inputValue: ''
       };
     },
-    name: 'InputArea'
+    name: 'InputArea',
+    methods: {
+      handleAddTodo() {
+        if (this.inputValue !== '') {
+          const date = new Date();
+          const result = {
+            id: `${date.now}`,
+            text: this.inputValue,
+            isCheck: false
+          };
+
+          this.$store.dispatch('ADD_TODO_ACTION', result);
+          this.inputValue = '';
+        }
+      }
+    }
   };
 
 </script>

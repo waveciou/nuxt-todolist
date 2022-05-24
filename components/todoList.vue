@@ -1,9 +1,9 @@
 <template>
-  <ul class="todoList">
+  <transition-group name="list" tag="ul" class="todoList">
     <li v-for="todo in contextList" :key="todo.id">
       <TodoItem :todo-data="todo" />
     </li>
-  </ul>
+  </transition-group>
 </template>
 
 <script>

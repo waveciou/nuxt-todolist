@@ -4,6 +4,9 @@
     <main class="main">
       <Content />
     </main>
+    <transition name="fade" mode="out-in">
+      <div v-if="isLoading" class="loader" />
+    </transition>
   </div>
 </template>
 
@@ -15,6 +18,11 @@
     components: {
       Header: header,
       Content: content
+    },
+    computed: {
+      isLoading() {
+        return this.$store.state.isLoading;
+      }
     }
   };
 
@@ -29,6 +37,17 @@
 
   .main {
     padding: 16px 10px;
+  }
+
+  .loader {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $color-blue;
+    opacity: 0.6;
+    z-index: 6000;
   }
 
 </style>

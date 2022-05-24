@@ -1,5 +1,13 @@
 // * Vuex
 
+const simulationPostAPI = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, 3000);
+  });
+};
+
 export const state = () => ({
   todoList: [
     {
@@ -17,13 +25,27 @@ export const state = () => ({
 });
 
 export const mutations = {
-  ADD_TODO(state, payload) {
+  SET_ADD_TODO(state, payload) {
     state.todoList.push(payload);
   },
-  CHECK_TODO(state, payload) {
+  SET_CHECK_TODO(state, payload) {
 
   },
-  DELETE_TODO(state, payload) {
+  SET_DELETE_TODO(state, payload) {
 
+  },
+  SET_ISLOADING(state, payload) {
+    state.isLoading = payload;
+  }
+};
+
+export const actions = {
+  async ADD_TODO_ACTION({ commit }, payload) {
+    commit('SET_ISLOADING', true);
+
+    await simulationPostAPI().then(() => {
+      commit('SET_ADD_TODO', payload);
+      commit('SET_ISLOADING', false);
+    });
   }
 };
