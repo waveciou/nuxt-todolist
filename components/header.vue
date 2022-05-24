@@ -1,13 +1,13 @@
 <template>
   <header class="header">
     <button type="button" class="header__menu-button">
-      <img src="~assets/img/menu.svg">
+      <img class="icon-img" src="~assets/img/menu.svg">
     </button>
     <div class="header__content">
       <strong class="header__logo">HandsUP</strong>
     </div>
     <button type="button" class="header__logout-button">
-      <img src="~assets/img/logout.svg">
+      <img class="icon-img" src="~assets/img/logout.svg">
     </button>
   </header>
 </template>
@@ -39,17 +39,6 @@
       position: relative;
       flex-basis: $header-height;
       flex-shrink: 0;
-
-      >img {
-        width: 100%;
-        height: 100%;
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        object-fit: scale-down;
-        user-select: none;
-      }
     }
 
     &__content {

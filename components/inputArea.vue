@@ -4,7 +4,7 @@
       <input v-model="inputValue" type="text" class="input-area__input" placeholder="請輸入要做的事情">
     </div>
     <button class="input-area__button">
-      <img src="~assets/img/plus.svg">
+      <img class="icon-img" src="~assets/img/plus.svg">
     </button>
   </div>
 </template>
@@ -44,19 +44,9 @@
     &__button {
       width: 35px;
       height: 35px;
+      position: relative;
       background-color: $color-blue;
       border-radius: 4px;
-
-      >img {
-        width: 100%;
-        height: 100%;
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        object-fit: scale-down;
-        user-select: none;
-      }
     }
   }
 

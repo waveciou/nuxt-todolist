@@ -7,7 +7,7 @@
       </label>
     </div>
     <button class="todoItem__delete-button">
-      <img src="~assets/img/delete.svg">
+      <img class="icon-img" src="~assets/img/delete.svg">
     </button>
   </div>
 </template>
@@ -36,6 +36,7 @@
   @import '~/assets/scss/_utils.scss';
 
   $check-icon-size: 20px;
+  $delete-button-size: 24px;
 
   .todoItem {
     padding-right: 35px;
@@ -51,20 +52,10 @@
     }
 
     &__delete-button {
-      width: 24px;
-      height: 24px;
-      flex-basis: 24px;
-
-      >img {
-        width: 100%;
-        height: 100%;
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        object-fit: scale-down;
-        user-select: none;
-      }
+      width: $delete-button-size;
+      height: $delete-button-size;
+      flex-basis: $delete-button-size;
+      position: relative;
     }
 
     &__checkbox {
