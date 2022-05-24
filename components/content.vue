@@ -3,12 +3,20 @@
     <h1 class="title">
       Todo List
     </h1>
+    <TodoList />
+    <InputArea />
   </div>
 </template>
 
 <script>
+  import todoList from '~/components/todoList.vue';
+  import inputArea from '~/components/inputArea.vue';
   export default {
-    name: 'Content'
+    name: 'Content',
+    components: {
+      InputArea: inputArea,
+      TodoList: todoList
+    }
   };
 
 </script>
@@ -20,16 +28,22 @@
     width: 100%;
     max-width: 800px;
     min-height: 718px;
-    padding: 33px 30px;
+    padding: 15px;
     margin: auto;
+    display: flex;
     background-color: $color-white;
     border: 1px $color-gray-dark solid;
     border-radius: 4px;
+    flex-direction: column;
   }
 
   .title {
     @include title-format;
 
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-top: 20px;
+    margin-bottom: 10px;
     font-weight: 700;
   }
 

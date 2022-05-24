@@ -48,6 +48,7 @@
         top: 0;
         left: 0;
         object-fit: scale-down;
+        user-select: none;
       }
     }
 
