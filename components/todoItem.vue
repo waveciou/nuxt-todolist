@@ -1,12 +1,12 @@
 <template>
   <div class="todoItem">
     <div class="todoItem__fieldset">
-      <input :id="id" v-model="isCheck" type="checkbox" class="todoItem__checkbox">
+      <input :id="id" v-model="isCheck" type="checkbox" class="todoItem__checkbox" @change="handleChangeTodo">
       <label :for="id" class="todoItem__heading">
         <span>{{ text }}</span>
       </label>
     </div>
-    <button class="todoItem__delete-button">
+    <button class="todoItem__delete-button" @click.stop="handleDeleteTodo">
       <img class="icon-img" src="~assets/img/delete.svg">
     </button>
   </div>
@@ -27,6 +27,17 @@
         type: Object,
         required: true
       }
+    },
+    methods: {
+      handleDeleteTodo() {
+        this.$store.dispatch('DELETE_TODO_ACTION', this.id);
+      },
+      handleChangeTodo() {
+        this.$store.commit('SET_CHECK_TODO', {
+          id: this.id,
+          isCheck: this.isCheck
+        });
+      }
     }
   };
 
@@ -39,10 +50,15 @@
   $delete-button-size: 24px;
 
   .todoItem {
-    padding-right: 35px;
-    padding-left: 35px;
+    padding-right: 15px;
+    padding-left: 15px;
     display: flex;
     align-items: center;
+
+    @include min-width(768px) {
+      padding-right: 35px;
+      padding-left: 35px;
+    }
 
     &__fieldset {
       flex-grow: 1;

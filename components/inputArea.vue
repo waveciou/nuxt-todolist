@@ -22,7 +22,7 @@
         if (this.inputValue !== '') {
           const date = new Date();
           const result = {
-            id: `${date.now}`,
+            id: `${date.getTime()}`,
             text: this.inputValue,
             isCheck: false
           };
