@@ -67,17 +67,19 @@ export default {
           input_placeholder: 'Please enter the todo.',
           delete_confirm_title: 'Are you sure to delete this todo?',
           delete_confirm_check: 'Yes',
-          delete_confirm_cancel: 'Cancel'
+          delete_confirm_cancel: 'Cancel',
+          no_data: 'No Data'
         },
         zh: {
           welcome: '歡迎',
           nav_all: '全部',
-          nav_todo: '代辦事項',
+          nav_todo: '待辦事項',
           nav_complete: '已完成',
           input_placeholder: '請輸入要做的事情',
           delete_confirm_title: '確定要刪除這筆資料？',
           delete_confirm_check: '確定',
-          delete_confirm_cancel: '取消'
+          delete_confirm_cancel: '取消',
+          no_data: '沒有資料'
         }
       }
     }

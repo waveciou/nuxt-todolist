@@ -1,6 +1,10 @@
 <template>
   <div class="todoList">
-    <transition-group name="list" tag="ul" class="todoList__wrap">
+    <div v-if="contextList.length < 1" class="no-data">
+      {{ $t('no_data') }}
+    </div>
+
+    <transition-group v-else name="list" tag="ul" class="todoList__wrap">
       <li v-for="todo in contextList" :key="todo.id">
         <TodoItem
           :todo-data="todo"
@@ -8,6 +12,7 @@
         />
       </li>
     </transition-group>
+
     <Popup :is-show="deleteConfirm.isShow">
       <div class="deleteConfirm">
         <div class="deleteConfirm__title">
@@ -110,7 +115,7 @@
     &__title {
       padding: 25px 10px;
       font-size: 18px;
-      line-height: 1.2em;
+      line-height: 1.6em;
       text-align: center;
     }
 
@@ -130,6 +135,15 @@
         }
       }
     }
+  }
+
+  .no-data {
+    margin-top: 40px;
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    color: $color-gray-dark;
+    margin-bottom: 40px;
   }
 
 </style>

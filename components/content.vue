@@ -10,7 +10,7 @@
       />
     </div>
     <TodoList :visibilities="visibilities" />
-    <InputArea />
+    <InputArea @setVisibilities="setVisibilities" />
   </div>
 </template>
 

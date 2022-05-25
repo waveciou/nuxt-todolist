@@ -2,24 +2,7 @@
   <div class="wrapper">
     <Header />
     <main class="main">
-      <div class="lang">
-        <button
-          type="button"
-          class="lang__button"
-          :class="{'current': $i18n.locale === 'zh'}"
-          @click.stop="handleSetLang('zh')"
-        >
-          中文
-        </button>
-        <button
-          type="button"
-          class="lang__button"
-          :class="{'current': $i18n.locale === 'en'}"
-          @click.stop="handleSetLang('en')"
-        >
-          EN
-        </button>
-      </div>
+      <LangNav @setLang="handleSetLang" />
       <Content />
     </main>
     <transition name="fade" mode="out-in">
@@ -38,11 +21,13 @@
 <script>
   import Header from '~/components/header.vue';
   import Content from '~/components/content.vue';
+  import LangNav from '~/components/langNav.vue';
   export default {
     name: 'Home',
     components: {
       Header,
-      Content
+      Content,
+      LangNav
     },
     created() {
       this.getLocalData();
@@ -148,25 +133,6 @@
     font-size: 16px;
     font-weight: 700;
     color: rgba($color-black, 0.6);
-  }
-}
-
-.lang {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto 10px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-
-  &__button {
-    margin-left: 10px;
-    font-size: 16px;
-
-    &.current {
-      font-weight: 700;
-      color: $color-blue;
-    }
   }
 }
 

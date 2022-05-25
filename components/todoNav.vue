@@ -63,12 +63,14 @@
     }
 
     &__button {
-      margin-left: 10px;
+      margin-left: 15px;
       font-size: 16px;
+      border-bottom: 2px transparent solid;
 
       &.current {
-        font-weight: 700;
+        font-weight: 500;
         color: $color-blue;
+        border-bottom-color: $color-blue;
       }
     }
   }

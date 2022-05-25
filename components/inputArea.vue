@@ -24,7 +24,7 @@
     },
     name: 'InputArea',
     methods: {
-      handleAddTodo() {
+      async handleAddTodo() {
         if (this.inputValue !== '') {
           const date = new Date();
           const result = {
@@ -33,8 +33,9 @@
             isCheck: false
           };
 
-          this.$store.dispatch('ADD_TODO_ACTION', result);
+          await this.$store.dispatch('ADD_TODO_ACTION', result);
           this.inputValue = '';
+          this.$emit('setVisibilities', 'todo');
         }
       }
     }
