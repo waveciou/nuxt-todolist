@@ -5,7 +5,7 @@
         v-model.trim="inputValue"
         type="text"
         class="input-area__input"
-        placeholder="請輸入要做的事情"
+        :placeholder="$t('input_placeholder')"
         @keyup.enter="handleAddTodo"
       >
     </div>

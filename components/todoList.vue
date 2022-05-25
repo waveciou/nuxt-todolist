@@ -11,14 +11,14 @@
     <Popup :is-show="deleteConfirm.isShow">
       <div class="deleteConfirm">
         <div class="deleteConfirm__title">
-          確定要刪除這筆資料？
+          {{ $t('delete_confirm_title') }}
         </div>
         <div class="deleteConfirm__control">
           <button @click.stop="handleConfirmDelete">
-            確定
+            {{ $t('delete_confirm_check') }}
           </button>
           <button @click.stop="handleConfirmClose">
-            取消
+            {{ $t('delete_confirm_cancel') }}
           </button>
         </div>
       </div>

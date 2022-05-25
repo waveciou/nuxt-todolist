@@ -1,28 +1,31 @@
 <template>
   <nav class="nav">
     <button
+      type="button"
       class="nav__button"
       :class="{'current': visibilities === 'all'}"
-      title="All"
+      :title="$t('nav_all')"
       @click.stop="handleSetNav('all')"
     >
-      All
+      {{ $t('nav_all') }}
     </button>
     <button
+      type="button"
       class="nav__button"
       :class="{'current': visibilities === 'todo'}"
-      title="Todo"
+      :title="$t('nav_todo')"
       @click.stop="handleSetNav('todo')"
     >
-      Todo
+      {{ $t('nav_todo') }}
     </button>
     <button
+      type="button"
       class="nav__button"
       :class="{'current': visibilities === 'complete'}"
-      title="Complete"
+      :title="$t('nav_complete')"
       @click.stop="handleSetNav('complete')"
     >
-      Complete
+      {{ $t('nav_complete') }}
     </button>
   </nav>
 </template>

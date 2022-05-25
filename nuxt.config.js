@@ -49,8 +49,39 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/i18n'
   ],
+
+  i18n: {
+    locales: ['en', 'zh'],
+    defaultLocale: 'en',
+    vueI18n: {
+      fallbackLocale: 'en',
+      messages: {
+        en: {
+          welcome: 'Welcome',
+          nav_all: 'All',
+          nav_todo: 'Todo',
+          nav_complete: 'Complete',
+          input_placeholder: 'Please enter the todo.',
+          delete_confirm_title: 'Are you sure to delete this todo?',
+          delete_confirm_check: 'Yes',
+          delete_confirm_cancel: 'Cancel'
+        },
+        zh: {
+          welcome: '歡迎',
+          nav_all: '全部',
+          nav_todo: '代辦事項',
+          nav_complete: '已完成',
+          input_placeholder: '請輸入要做的事情',
+          delete_confirm_title: '確定要刪除這筆資料？',
+          delete_confirm_check: '確定',
+          delete_confirm_cancel: '取消'
+        }
+      }
+    }
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
