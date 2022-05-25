@@ -23,6 +23,12 @@
       };
     },
     name: 'InputArea',
+    props: {
+      visibilities: {
+        type: String,
+        required: true
+      }
+    },
     methods: {
       async handleAddTodo() {
         if (this.inputValue !== '') {
@@ -35,7 +41,10 @@
 
           await this.$store.dispatch('ADD_TODO_ACTION', result);
           this.inputValue = '';
-          this.$emit('setVisibilities', 'todo');
+
+          if (this.visibilities === 'complete') {
+            this.$emit('setVisibilities', 'todo');
+          }
         }
       }
     }
