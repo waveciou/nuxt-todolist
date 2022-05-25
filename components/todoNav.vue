@@ -52,12 +52,13 @@
 
   .nav {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 15px;
     display: flex;
     justify-content: flex-end;
 
     @include min-width(480px) {
       width: auto;
+      margin-top: 10px;
       align-items: center;
       justify-content: flex-start;
     }

@@ -43,7 +43,8 @@
   justify-content: flex-end;
 
   &__button {
-    margin: 0 10px;
+    min-width: 50px;
+    margin: 0 5px;
     font-size: 16px;
     border-bottom: 2px transparent solid;
 

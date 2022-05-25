@@ -1,5 +1,5 @@
 # Nuxt Todolist
 
-## Demo Link
+## Demo
 
 [https://waveciou.github.io/nuxt-todolist/](https://waveciou.github.io/nuxt-todolist/)

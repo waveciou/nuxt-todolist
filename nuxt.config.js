@@ -60,10 +60,9 @@ export default {
       fallbackLocale: 'en',
       messages: {
         en: {
-          welcome: 'Welcome',
-          nav_all: 'All',
-          nav_todo: 'Todo',
-          nav_complete: 'Complete',
+          nav_all: 'ALL',
+          nav_todo: 'TODO',
+          nav_complete: 'COMPLETE',
           input_placeholder: 'Please enter the todo.',
           delete_confirm_title: 'Are you sure to delete this todo?',
           delete_confirm_check: 'Yes',
@@ -71,7 +70,6 @@ export default {
           no_data: 'No Data'
         },
         zh: {
-          welcome: '歡迎',
           nav_all: '全部',
           nav_todo: '待辦事項',
           nav_complete: '已完成',

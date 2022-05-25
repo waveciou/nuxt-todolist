@@ -128,7 +128,7 @@
         flex-grow: 1;
         padding: 10px;
         font-size: 16px;
-        line-height: 1.2em;
+        line-height: 1.4em;
 
         &+button {
           border-left: 1px $color-gray-dark solid;
