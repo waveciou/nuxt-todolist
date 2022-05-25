@@ -2,7 +2,10 @@
   <div class="todoList">
     <transition-group name="list" tag="ul" class="todoList__wrap">
       <li v-for="todo in contextList" :key="todo.id">
-        <TodoItem :todo-data="todo" @set-delete-todo="handleConfirmOpen" />
+        <TodoItem
+          :todo-data="todo"
+          @setDeleteTodo="handleConfirmOpen"
+        />
       </li>
     </transition-group>
     <Popup :is-show="deleteConfirm.isShow">
@@ -41,6 +44,12 @@
       TodoItem,
       Popup
     },
+    props: {
+      visibilities: {
+        type: String,
+        required: true
+      }
+    },
     methods: {
       handleConfirmOpen(id) {
         this.deleteConfirm.isShow = true;
@@ -51,7 +60,7 @@
         this.deleteConfirm.id = '';
       },
       handleConfirmDelete() {
-        if (isLoading === false) {
+        if (this.isLoading === false) {
           this.$store.dispatch('DELETE_TODO_ACTION', this.deleteConfirm.id);
         }
         this.handleConfirmClose();
@@ -59,7 +68,16 @@
     },
     computed: {
       contextList() {
-        return this.$store.state.todoList;
+        return this.$store.state.todoList.filter(({ isCheck }) => {
+          switch (this.visibilities) {
+            case 'todo':
+              return isCheck === false;
+            case 'complete':
+              return isCheck === true;
+            default:
+              return true;
+          }
+        });
       },
       isLoading() {
         return this.$store.state.isLoading;

@@ -1,12 +1,21 @@
 <template>
   <div class="todoItem">
     <div class="todoItem__fieldset">
-      <input :id="id" v-model="isCheck" type="checkbox" class="todoItem__checkbox" @change="handleChangeTodo">
+      <input
+        :id="id"
+        v-model="isCheck"
+        type="checkbox"
+        class="todoItem__checkbox"
+        @change="handleChangeTodo"
+      >
       <label :for="id" class="todoItem__heading">
         <span>{{ text }}</span>
       </label>
     </div>
-    <button class="todoItem__delete-button" @click.stop="handleDeleteTodo">
+    <button
+      class="todoItem__delete-button"
+      @click.stop="handleDeleteTodo"
+    >
       <img class="icon-img" src="~assets/img/delete.svg">
     </button>
   </div>
@@ -30,7 +39,7 @@
     },
     methods: {
       handleDeleteTodo() {
-        this.$emit('set-delete-todo', this.id);
+        this.$emit('setDeleteTodo', this.id);
       },
       handleChangeTodo() {
         this.$store.commit('SET_CHECK_TODO', {

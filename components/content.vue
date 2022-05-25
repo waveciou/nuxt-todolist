@@ -1,50 +1,83 @@
 <template>
   <div class="content">
-    <h1 class="title">
-      Todo List
-    </h1>
-    <TodoList />
+    <div class="content__header">
+      <h1 class="title">
+        Todo List
+      </h1>
+      <TodoNav
+        :visibilities="visibilities"
+        @setVisibilities="setVisibilities"
+      />
+    </div>
+    <TodoList :visibilities="visibilities" />
     <InputArea />
   </div>
 </template>
 
 <script>
   import TodoList from '~/components/todoList.vue';
+  import TodoNav from '~/components/todoNav.vue';
   import InputArea from '~/components/inputArea.vue';
   export default {
+    data() {
+      return {
+        visibilities: 'all'
+      };
+    },
     name: 'Content',
     components: {
       InputArea,
+      TodoNav,
       TodoList
+    },
+    methods: {
+      setVisibilities(payload) {
+        this.visibilities = payload;
+      }
     }
   };
 
 </script>
 
 <style lang="scss" scoped>
-  @import '~/assets/scss/_utils.scss';
+@import '~/assets/scss/_utils.scss';
 
-  .content {
-    width: 100%;
-    max-width: 800px;
-    min-height: 718px;
-    padding: 15px;
-    margin: auto;
-    display: flex;
-    background-color: $color-white;
-    border: 1px $color-gray-dark solid;
-    border-radius: 4px;
-    flex-direction: column;
-  }
+.content {
+  width: 100%;
+  max-width: 800px;
+  min-height: 718px;
+  padding: 15px;
+  margin: auto;
+  display: flex;
+  background-color: $color-white;
+  border: 1px $color-gray-dark solid;
+  border-radius: 4px;
+  flex-direction: column;
 
-  .title {
-    @include title-format;
-
+  &__header {
     padding-right: 15px;
     padding-left: 15px;
     margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
     margin-bottom: 10px;
-    font-weight: 700;
-  }
 
+    @include min-width(480px) {
+      align-items: center;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+  }
+}
+
+.title {
+  @include title-format;
+
+  width: 100%;
+  font-weight: 700;
+
+  @include min-width(480px) {
+    width: auto;
+  }
+}
 </style>
