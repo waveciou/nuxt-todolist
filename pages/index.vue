@@ -6,9 +6,11 @@
     </main>
     <transition name="fade" mode="out-in">
       <div v-if="isLoading" class="loader">
-        <div class="loader__icon">
-          <span />
-          <p>loading...</p>
+        <div>
+          <span class="loader__icon" />
+          <p class="loader__title">
+            loading...
+          </p>
         </div>
       </div>
     </transition>
@@ -16,13 +18,13 @@
 </template>
 
 <script>
-  import header from '~/components/header.vue';
-  import content from '~/components/content.vue';
+  import Header from '~/components/header.vue';
+  import Content from '~/components/content.vue';
   export default {
     name: 'Home',
     components: {
-      Header: header,
-      Content: content
+      Header,
+      Content
     },
     created() {
       this.getLocalData();
@@ -101,23 +103,21 @@
     z-index: 6000;
 
     &__icon {
-      >span {
-        width: 20px;
-        height: 20px;
-        padding: 20px;
-        margin: 0 auto;
-        display: block;
-        border: 7px dashed $color-white;
-        border-radius: 100%;
-        animation: loading 1.5s 0.3s cubic-bezier(0.17, 0.37, 0.43, 0.67) infinite;
-      }
+      width: 20px;
+      height: 20px;
+      padding: 20px;
+      margin: 0 auto;
+      display: block;
+      border: 7px dashed $color-white;
+      border-radius: 100%;
+      animation: loading 1.5s 0.3s cubic-bezier(0.17, 0.37, 0.43, 0.67) infinite;
+    }
 
-      p {
-        padding: 5px;
-        font-size: 16px;
-        font-weight: 700;
-        color: rgba($color-black, 0.6);
-      }
+    &__title {
+      padding: 5px;
+      font-size: 16px;
+      font-weight: 700;
+      color: rgba($color-black, 0.6);
     }
   }
 

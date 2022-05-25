@@ -30,7 +30,7 @@
     },
     methods: {
       handleDeleteTodo() {
-        this.$store.dispatch('DELETE_TODO_ACTION', this.id);
+        this.$emit('set-delete-todo', this.id);
       },
       handleChangeTodo() {
         this.$store.commit('SET_CHECK_TODO', {

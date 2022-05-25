@@ -9,13 +9,13 @@
 </template>
 
 <script>
-  import todoList from '~/components/todoList.vue';
-  import inputArea from '~/components/inputArea.vue';
+  import TodoList from '~/components/todoList.vue';
+  import InputArea from '~/components/inputArea.vue';
   export default {
     name: 'Content',
     components: {
-      InputArea: inputArea,
-      TodoList: todoList
+      InputArea,
+      TodoList
     }
   };
 
