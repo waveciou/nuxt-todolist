@@ -52,10 +52,10 @@
         const lang = localStorage.getItem('lang');
         const database = localStorage.getItem('nuxt-todolist');
 
-        if (lang === 'en') {
-          this.handleSetLang('en');
-        } else {
+        if (lang === 'zh') {
           this.handleSetLang('zh');
+        } else {
+          this.handleSetLang('en');
         }
 
         if (database) {
