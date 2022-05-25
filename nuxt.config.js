@@ -2,12 +2,16 @@ export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
+  router: {
+    base: '/nuxt-todolist/'
+  },
+
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'nuxt-todolist',
+    title: 'Nuxt Todolist',
     htmlAttrs: {
       lang: 'en'
     },
