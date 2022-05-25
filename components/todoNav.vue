@@ -3,7 +3,7 @@
     <button
       type="button"
       class="nav__button"
-      :class="{'current': visibilities === 'all'}"
+      :class="{'current': accordance === 'all'}"
       :title="$t('nav_all')"
       @click.stop="handleSetNav('all')"
     >
@@ -12,7 +12,7 @@
     <button
       type="button"
       class="nav__button"
-      :class="{'current': visibilities === 'todo'}"
+      :class="{'current': accordance === 'todo'}"
       :title="$t('nav_todo')"
       @click.stop="handleSetNav('todo')"
     >
@@ -21,7 +21,7 @@
     <button
       type="button"
       class="nav__button"
-      :class="{'current': visibilities === 'complete'}"
+      :class="{'current': accordance === 'complete'}"
       :title="$t('nav_complete')"
       @click.stop="handleSetNav('complete')"
     >
@@ -34,14 +34,14 @@
   export default {
     name: 'TodoNav',
     props: {
-      visibilities: {
+      accordance: {
         type: String,
         required: true
       }
     },
     methods: {
       handleSetNav(payload) {
-        this.$emit('setVisibilities', payload);
+        this.$emit('setAccordance', payload);
       }
     }
   };

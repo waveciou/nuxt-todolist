@@ -22,6 +22,7 @@
   import Header from '~/components/header.vue';
   import Content from '~/components/content.vue';
   import LangNav from '~/components/langNav.vue';
+
   export default {
     name: 'Home',
     components: {

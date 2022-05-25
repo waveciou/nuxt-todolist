@@ -2,6 +2,7 @@
   <div class="input-area">
     <div class="input-area__control">
       <input
+        ref="inputRef"
         v-model.trim="inputValue"
         type="text"
         class="input-area__input"
@@ -24,7 +25,7 @@
     },
     name: 'InputArea',
     props: {
-      visibilities: {
+      accordance: {
         type: String,
         required: true
       }
@@ -39,11 +40,13 @@
             isCheck: false
           };
 
+          this.$refs.inputRef.blur();
+
           await this.$store.dispatch('ADD_TODO_ACTION', result);
           this.inputValue = '';
 
-          if (this.visibilities === 'complete') {
-            this.$emit('setVisibilities', 'todo');
+          if (this.accordance === 'complete') {
+            this.$emit('setAccordance', 'todo');
           }
         }
       }

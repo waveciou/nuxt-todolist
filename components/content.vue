@@ -5,14 +5,14 @@
         Todo List
       </h1>
       <TodoNav
-        :visibilities="visibilities"
-        @setVisibilities="setVisibilities"
+        :accordance="accordance"
+        @setAccordance="setAccordance"
       />
     </div>
-    <TodoList :visibilities="visibilities" />
+    <TodoList :accordance="accordance" />
     <InputArea
-      :visibilities="visibilities"
-      @setVisibilities="setVisibilities"
+      :accordance="accordance"
+      @setAccordance="setAccordance"
     />
   </div>
 </template>
@@ -21,10 +21,11 @@
   import TodoList from '~/components/todoList.vue';
   import TodoNav from '~/components/todoNav.vue';
   import InputArea from '~/components/inputArea.vue';
+
   export default {
     data() {
       return {
-        visibilities: 'all'
+        accordance: 'all'
       };
     },
     name: 'Content',
@@ -34,8 +35,8 @@
       TodoList
     },
     methods: {
-      setVisibilities(payload) {
-        this.visibilities = payload;
+      setAccordance(payload) {
+        this.accordance = payload;
       }
     }
   };

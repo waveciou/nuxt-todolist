@@ -50,7 +50,7 @@
       Popup
     },
     props: {
-      visibilities: {
+      accordance: {
         type: String,
         required: true
       }
@@ -74,7 +74,7 @@
     computed: {
       contextList() {
         return this.$store.state.todoList.filter(({ isCheck }) => {
-          switch (this.visibilities) {
+          switch (this.accordance) {
             case 'todo':
               return isCheck === false;
             case 'complete':
