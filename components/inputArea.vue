@@ -1,7 +1,13 @@
 <template>
   <div class="input-area">
     <div class="input-area__control">
-      <input v-model.trim="inputValue" type="text" class="input-area__input" placeholder="請輸入要做的事情">
+      <input
+        v-model.trim="inputValue"
+        type="text"
+        class="input-area__input"
+        placeholder="請輸入要做的事情"
+        @keyup.enter="handleAddTodo"
+      >
     </div>
     <button class="input-area__button" @click.stop="handleAddTodo">
       <img class="icon-img" src="~assets/img/plus.svg">

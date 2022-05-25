@@ -83,7 +83,11 @@ module.exports = {
         'watchQuery'
       ]
     }],
-    'vue/multi-word-component-names': ['off']
+    'vue/multi-word-component-names': ['off'],
+    'vue/html-closing-bracket-newline': ['error', {
+      singleline: 'never',
+      multiline: 'always'
+    }]
   },
   overrides: [
     {
